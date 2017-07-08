@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OGP: Add Document to Solr</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h1>OGP: Add Document to Solr</h1>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="LayerId" class="col-sm-3 control-label">LayerId</label>
+						<div class="col-sm-9">
+							<select class="form-control" id="LayerId">
+
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="LayerDisplayName" class="col-sm-3 control-label">LayerDisplayName</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="LayerDisplayName">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="Name" class="col-sm-3 control-label">Name</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="Name">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="Originator" class="col-sm-3 control-label">Originator</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="Originator">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="Publisher" class="col-sm-3 control-label">Publisher</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="Publisher" value="UW Sea Grant">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="CollectionId" class="col-sm-3 control-label">CollectionId</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="CollectionId" value="Seagrant Coastal Atlas">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="Availability" class="col-sm-3 control-label">Availability</label>
+						<div class="col-sm-9">
+							<select class="form-control" id="Availability">
+								<option>Online</option>
+								<option>Offline</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Location</label>
+					</div>
+					<div class="form-group">
+						<label for="wms" class="col-sm-3 control-label text-muted">wms</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="wms" value="http://maps.aqua.wisc.edu/geoserver/wms">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="wfs" class="col-sm-3 control-label text-muted">wfs</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="wfs" value="http://maps.aqua.wisc.edu/geoserver/wfs">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="tilecache" class="col-sm-3 control-label text-muted">tilecache</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="tilecache" value="http://maps.aqua.wisc.edu/geoserver/UWSeaGrant/wms">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="fileDownload" class="col-sm-3 control-label text-muted">fileDownload</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="fileDownload">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="metadataLink" class="col-sm-3 control-label text-muted">metadataLink</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="metadataLink">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="WorkspaceName" class="col-sm-3 control-label">WorkspaceName</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="WorkspaceName">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="Access" class="col-sm-3 control-label">Access</label>
+						<div class="col-sm-9">
+							<select class="form-control" id="Access">
+								<option>Public</option>
+								<option>Restricted</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="Institution" class="col-sm-3 control-label">Institution</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="Institution" value="UWSeaGrant">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="ThemeKeywords" class="col-sm-3 control-label">ThemeKeywords</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="ThemeKeywords">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="PlaceKeywords" class="col-sm-3 control-label">PlaceKeywords</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="PlaceKeywords">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="DataType" class="col-sm-3 control-label">DataType</label>
+						<div class="col-sm-9">
+							<select class="form-control" id="DataType">
+								<option disabled selected value> -- select a data type -- </option>
+								<option value="Point">Point</option>
+								<option value="Vector">Vector</option>
+								<option value="Polygon">Polygon</option>
+								<option value="Raster">Raster</option>
+								<option value="Pub">Publication</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-9">
+							<button type="submit" class="btn btn-primary">Add Document</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div id="output"></div>
+	</div>
+
+	<!-- Load jquery, Open Layers, and  -->
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="js/ol.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<script>
+		function addDoc() {
+			doc = {};
+			doc["LayerId"] = $("#LayerId").val();
+			doc["LayerDisplayName"] = $("#LayerDisplayName").val();
+			doc["Name"] = $("#Name").val();
+			doc["Originator"] = $("#Originator").val();
+			doc["OriginatorSort"] = $("#Originator").val();
+			doc["Publisher"] = $("#Publisher").val();
+			doc["CollectionId"] = $("#CollectionId").val();
+			doc["Availability"] = $("#Availability").val();
+
+			doc["Location"] = {};
+			doc.Location["wms"] = [$("#wms")];
+			doc.Location["wfs"] = $("#wfs").val();
+			doc.Location["tilecache"] = [$("#tilecache")];
+			doc.Location["fileDownload"] = $("#fileDownload").val();
+			doc.Location["metadataLink"] = $("#metadataLink").val();
+			
+			doc["WorkspaceName"] = $("#WorkspaceName").val();
+			doc["Access"] = $("#Access").val();
+			doc["Institution"] = $("#Institution").val();
+			doc["ThemeKeywords"] = $("#ThemeKeywords").val();
+			doc["PlaceKeywords"] = $("#PlaceKeywords").val();
+			doc["PlaceKeywordsSynonyms"] = "";
+			doc["DataType"] = $("#DataType").val();
+			doc["MaxX"] = -86.5;
+			doc["MinX"] = -93;
+			doc["MinY"] = 42.5;
+			doc["MaxY"] = 47.5;
+			doc["CenterY"] = 45;
+			doc["CenterX"] = -89.75;
+			doc["HalfHeight"] = 2.5;
+			doc["HalfWidth"] = 3.25;
+			doc["FgdcText"] = "";
+		}
+
+		// Define parser
+		var parser = new ol.format.WMSCapabilities();
+
+		// Get capabilites from server
+		$.ajax('http://144.92.44.184/geoserver/wms/filedata?request=GetCapabilities').then(function(response){
+			// Parse response, create json, load into object
+			var result = parser.read(response);
+			var json = window.JSON.stringify(result, null, 2);
+			obj = JSON.parse(json);
+
+			// Create object to store options
+			var layers = {};
+			for (var lyr in obj.Capability.Layer.Layer) {
+
+				var layer = {};
+
+				// Filter out hydrologic layers by skipping over in loop
+				if ((obj.Capability.Layer.Layer[lyr].Title).indexOf("ntp") > -1) { continue; }
+
+				// LayerId
+				var name = obj.Capability.Layer.Layer[lyr].Name;
+				layer.LayerId = name.substring(name.indexOf(":") + 1);
+
+				// LayerDisplayName
+				layer.LayerDisplayName = obj.Capability.Layer.Layer[lyr].Title;
+
+				// Name
+				layer.Name = obj.Capability.Layer.Layer[lyr].Name;
+
+				// WorkspaceName
+				layer.WorkspaceName = obj.Capability.Layer.Layer[lyr].Name.split(":")[0];
+
+				// fileDownload
+				layer.fileDownload = 'http://maps.aqua.wisc.edu/geoserver/UWSeaGrant/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=' + layer.Name + '&outputFormat=SHAPE-ZIP'
+
+				// Bounding box
+				var bbox = {};
+				bbox.MaxX = obj.Capability.Layer.Layer[lyr].EX_GeographicBoundingBox[2];
+				bbox.MinX = obj.Capability.Layer.Layer[lyr].EX_GeographicBoundingBox[0];
+				bbox.MaxY = obj.Capability.Layer.Layer[lyr].EX_GeographicBoundingBox[3];
+				bbox.MinY = obj.Capability.Layer.Layer[lyr].EX_GeographicBoundingBox[1];
+				bbox.CenterX    = ((bbox.MaxX + bbox.MinX)/2).toFixed(6);
+				bbox.CenterY    = ((bbox.MaxY + bbox.MinY)/2).toFixed(6);
+				bbox.HalfWidth  = ((bbox.MaxX - bbox.MinX)/2).toFixed(6);
+				bbox.HalfHeight = ((bbox.MaxY - bbox.MinY)/2).toFixed(6);
+				layer.bbox = bbox;
+
+				// Add layer to options
+				layers[layer.LayerId] = layer;
+
+			};
+
+			// Add LayerIds to LayerId select input
+			//<option></option>
+			var options = "<option disabled selected value> -- select a layer -- </option>";
+			for (var n in layers) {
+				options = options.concat("<option>",layers[n].LayerId,"</option>\n");
+			}
+			$('#LayerId').html(options);
+
+			// Auto fill inputs on LayerId select
+			$("#LayerId").change(function() {
+				var LayerId = $("#LayerId option:selected").text();
+
+				// LayerDisplayName
+				$("#LayerDisplayName").val(layers[LayerId].LayerDisplayName);
+
+				// Name
+				$("#Name").val(LayerId);
+
+				// WorkspaceName
+				$("#WorkspaceName").val(layers[LayerId].WorkspaceName);
+
+				// fileDownload
+				$("#fileDownload").val(layers[LayerId].fileDownload);
+
+			});
+		});
+	</script>
+</body>
+</html>
